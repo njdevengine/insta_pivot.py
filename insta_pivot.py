@@ -21,13 +21,22 @@ combined = combined.loc["node"]
 
 combined.to_csv('raw_output.csv')
 
-#need to make some changes here to get userids
-
-df = pd.read_csv('import.csv')
+user_ids = []
+for i in range(len(list(combined['owner']))):
+    user_ids.append(list(combined['owner'])[i]['id'])
 
 links = []
 for i in list(df['owner']):
     links.append("https://i.instagram.com/api/v1/users/"+str(i)+"/info/")
+    
+# example: https://i.instagram.com/api/v1/users/123456.../info/
+unique = list(set(user_ids))
+
+links = []
+for i in unique:
+    links.append("https://i.instagram.com/api/v1/users/"+str(i)+"/info/")
+    
+    
     
 from fake_useragent import UserAgent
 import requests
