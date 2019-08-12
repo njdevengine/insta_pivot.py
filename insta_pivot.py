@@ -74,8 +74,6 @@ for i in range(len(data)):
         external_links.append(" ")
         print('external_link error at',i)
         
-df['handle'] = usernames
-df['bios'] = bios
-df['external_links'] = external_links
-df['link'] = ["https://www.instagram.com/"+i for i in list(df['handle'])]
-df.to_csv('all_data.csv',index=False)
+all_data = pd.DataFrame({'username':usernames,'bio':bios,'links':external_links})
+all_data['profile_link'] = ["https://www.instagram.com/"+i for i in usernames]
+all_data.to_csv('all_data.csv',index=False)
