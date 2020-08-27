@@ -24,7 +24,7 @@ for i in range(len(unique)):
             'Is private': [account.is_private],
             'Is verified': [account.is_verified],
             })
-            idf.to_csv(r"/Users/paulalbilal/insta_scrape//"+account.username+".csv")
+            idf.to_csv(r"/Users/yourname/insta_scrape//"+account.username+".csv")
             print(i)
             sleep(randint(2,10)+300)
         else:
@@ -42,7 +42,7 @@ for i in range(len(unique)):
             'Is private': [account.is_private],
             'Is verified': [account.is_verified],
             })
-            idf.to_csv(r"/Users/paulalbilal/insta_scrape//"+account.username+".csv")
+            idf.to_csv(r"/Users/yourname/insta_scrape//"+account.username+".csv")
             sleep(randint(2,6)+10)
     except:
         print("taking a long nap... zzzZzZZZzzz")
